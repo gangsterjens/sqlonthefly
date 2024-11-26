@@ -43,7 +43,7 @@ if st.session_state['file_uploaded']:
     # Query Input
     #query = st.text_area('Write your SQL Query here', 'SELECT * FROM my_table LIMIT 5')
     query = st_ace(
-        value=INITIAL_CODE,
+        value=f'select * From {tablename} limit 5',
         language="SQL",
         placeholder="st.header('Hello world!')",
         theme=st.sidebar.selectbox("Theme", options=THEMES, index=26),
