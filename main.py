@@ -38,8 +38,6 @@ if st.session_state['file_uploaded']:
     df = st.session_state['dataframe']
     tablename = st.session_state['tablename']
 
-    st.write(f"Data from **{tablename}**:")
-    st.dataframe(df)
 
     # Query Input
     query = st.text_area('Write your SQL Query here', 'SELECT * FROM my_table LIMIT 5')
