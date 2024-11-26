@@ -15,4 +15,4 @@ with st.sidebar:
 
 if add:
   df = pd.read_csv(file, delimiter=delimiter)
-  print(df.head())
+  st.dataframe(df)
