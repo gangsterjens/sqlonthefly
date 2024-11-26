@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 st.markdown('# Welcome to SQL on the fly')
 st.markdown('## An app to analyze your csv, as you go')
