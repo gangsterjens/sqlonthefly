@@ -6,10 +6,13 @@ st.markdown('## An app to analyze your csv, as you go')
 
 with st.sidebar:
   st.markdown(' ### Upload your csv')
+  delimiter = st.radio('Choose:', [";","'"])
+  if not delimiter:
+    delimiter = ';'
   file = st.file_uploader('Add file here')
   add = st.button('Add csv')
 
 
 if add:
-  df = pd.read_csv(file)
+  df = pd.read_csv(file, delimiter=delimiter)
   print(df.head())
