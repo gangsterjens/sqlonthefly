@@ -3,8 +3,8 @@ import pandas as pd
 import pandasql as ps
 
 # App Header
-st.markdown('# Welcome to SQL on the Fly')
-st.markdown('## An app to analyze your CSV files with SQL')
+st.markdown('# SQL on the Fly')
+st.markdown('An app to analyze your CSV files with SQL')
 
 # Initialize session state for handling app state
 if 'file_uploaded' not in st.session_state:
