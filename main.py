@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pandasql as ps
+from streamlit_ace import st_ace
 
 # App Header
 st.markdown('# SQL on the Fly')
@@ -40,7 +41,24 @@ if st.session_state['file_uploaded']:
 
 
     # Query Input
-    query = st.text_area('Write your SQL Query here', 'SELECT * FROM my_table LIMIT 5')
+    #query = st.text_area('Write your SQL Query here', 'SELECT * FROM my_table LIMIT 5')
+    query = st_ace(
+        value=INITIAL_CODE,
+        language="SQL",
+        placeholder="st.header('Hello world!')",
+        theme=st.sidebar.selectbox("Theme", options=THEMES, index=26),
+        keybinding=st.sidebar.selectbox(
+            "Keybinding mode", options=KEYBINDINGS, index=3
+        ),
+        font_size=st.sidebar.slider("Font size", 5, 24, 14),
+        tab_size=st.sidebar.slider("Tab size", 1, 8, 4),
+        wrap=st.sidebar.checkbox("Wrap lines", value=False),
+        show_gutter=True,
+        show_print_margin=True,
+        auto_update=False,
+        readonly=False,
+        key="ace-editor",
+    )
 
     # Execute SQL Query
     if st.button('Run Query'):
