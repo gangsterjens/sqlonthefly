@@ -78,8 +78,6 @@ if st.session_state["file_uploaded"]:
         font_size=st.sidebar.slider("Font size", 5, 24, 14),
         tab_size=st.sidebar.slider("Tab size", 1, 8, 4),
         wrap=st.sidebar.checkbox("Wrap lines", value=False),
-        show_gutter=True,
-        show_print_margin=True,
         auto_update=True,
         readonly=False,
         key="ace",
