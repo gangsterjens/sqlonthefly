@@ -3,6 +3,9 @@ import pandas as pd
 import duckdb
 from streamlit_ace import st_ace
 
+st.set_page_config(layout="wide")
+
+
 # App Header
 st.markdown('# SQL on the Fly')
 st.markdown('An app to analyze your CSV files with SQL')
